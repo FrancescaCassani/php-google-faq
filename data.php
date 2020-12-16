@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 <body> 
@@ -11,6 +13,45 @@
     Ci sono diverse domande con relative risposte.
     Gestire il “Database” creando una struttura di dato in PHP dove sono contenute queste domande e risposte, gestendo poi la visualizzazione di queste domande e risposte nel markup. 
 -->
+
+
+<!-- LOGICA HTML -->
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="./img/google_logo-696x265.png">
+            <h3>Privacy e termini</h3>
+        </div>
+        <div class="user">
+            <div class="menu">
+             <a href="#">
+                    <i class="fas fa-ellipsis-v"></i>
+                </a>
+            </div>
+
+            <div class="button">
+                <div class="btn">Accedi</div>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="info">
+            <ul>
+                <li>Introduzione</li>
+                <li>Norme sulla privacy</li>
+                <li>Termini di servizio</li>
+                <li>Tecnologie</li>
+                <li>Domande frequenti</li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<main>
+    <section class="content">
+        <!-- LOGICA PHP -->
 <?php 
 
 $faqs = [
@@ -40,13 +81,15 @@ $faqs = [
 ];
 ?>
 
-
 <?php for($i = 0; $i < count($faqs); $i++) { ?>
-
-        <h3> <?php echo $faqs[$i]['question']; ?> </h3>
+    <div class="questions">
+        <h2> <?php echo $faqs[$i]['question']; ?> </h2>
         <p> <?php echo $faqs[$i]['answer']; ?> </p>
-            
+    </div>      
 <?php } ?>
+        
+    </section>
+</main>
 
 
 
@@ -54,7 +97,20 @@ $faqs = [
 
 
 
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
